@@ -1,0 +1,23 @@
+import { test, expect } from '@playwright/test';
+
+
+  //De 2e "test" ('test', async') kan je veranderen in elke naam die je wil
+test('Openen PP', async ({ page }) => {
+  await page.goto('https://ep-pp.osv2020.local:20043/');
+  //await page.goto('https://ep-pp.osv2020.local:20043/wvp-nl/uebersicht/uebersicht.xhtml;jsessionid=gaAkHO27uMyQjieeCxy8kz2zttXTkUXY8kAxU3sD.laptop0942');
+  await expect(page).toHaveTitle(/OSV2020-PP - Startpagina/);
+
+  await page.locator('[id="frmUebersicht\\:lnkBasisdaten"]').click();
+
+  await page.getByRole('cell', { name: 'Op zichzelf staande geregistreerde naam' }).locator('span').click();
+  
+  //Klik in veld Gereg. aanduiding
+  await page.getByLabel('Geregistreerde aanduiding:*').click();
+
+  //Voer naam partij in veld Gereg. aanduiding.
+  await page.getByLabel('Geregistreerde aanduiding:*').fill('Het Verschil');
+
+  Een nieuwe update
+
+
+});
