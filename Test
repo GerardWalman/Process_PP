@@ -17,7 +17,7 @@ test('Openen PP', async ({ page }) => {
   //Voer naam partij in veld Gereg. aanduiding.
   await page.getByLabel('Geregistreerde aanduiding:*').fill('Het Verschil');
 
- 
+ Nu met wat nieuwe tekst erbij
 
 
 });
